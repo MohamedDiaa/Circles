@@ -13,6 +13,9 @@
 		D9FE0C291D189F5C00DE6426 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9FE0C281D189F5C00DE6426 /* Assets.xcassets */; };
 		D9FE0C2C1D189F5C00DE6426 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9FE0C2A1D189F5C00DE6426 /* LaunchScreen.storyboard */; };
 		D9FE0C371D189F5C00DE6426 /* CirclesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE0C361D189F5C00DE6426 /* CirclesUITests.swift */; };
+		D9FE0C421D18A1CB00DE6426 /* CircleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE0C411D18A1CB00DE6426 /* CircleItem.swift */; };
+		D9FE0C441D18A1F600DE6426 /* CircleBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE0C431D18A1F600DE6426 /* CircleBoardView.swift */; };
+		D9FE0C471D18A22100DE6426 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9FE0C461D18A22100DE6426 /* Icons.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		D9FE0C321D189F5C00DE6426 /* CirclesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CirclesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9FE0C361D189F5C00DE6426 /* CirclesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclesUITests.swift; sourceTree = "<group>"; };
 		D9FE0C381D189F5C00DE6426 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9FE0C411D18A1CB00DE6426 /* CircleItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleItem.swift; sourceTree = "<group>"; };
+		D9FE0C431D18A1F600DE6426 /* CircleBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleBoardView.swift; sourceTree = "<group>"; };
+		D9FE0C461D18A22100DE6426 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,9 @@
 				D9FE0C281D189F5C00DE6426 /* Assets.xcassets */,
 				D9FE0C2A1D189F5C00DE6426 /* LaunchScreen.storyboard */,
 				D9FE0C2D1D189F5C00DE6426 /* Info.plist */,
+				D9FE0C411D18A1CB00DE6426 /* CircleItem.swift */,
+				D9FE0C431D18A1F600DE6426 /* CircleBoardView.swift */,
+				D9FE0C461D18A22100DE6426 /* Icons.xcassets */,
 			);
 			path = Circles;
 			sourceTree = "<group>";
@@ -179,6 +188,7 @@
 			files = (
 				D9FE0C2C1D189F5C00DE6426 /* LaunchScreen.storyboard in Resources */,
 				D9FE0C291D189F5C00DE6426 /* Assets.xcassets in Resources */,
+				D9FE0C471D18A22100DE6426 /* Icons.xcassets in Resources */,
 				D9FE0C271D189F5C00DE6426 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,7 +208,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9FE0C241D189F5C00DE6426 /* ViewController.swift in Sources */,
+				D9FE0C441D18A1F600DE6426 /* CircleBoardView.swift in Sources */,
 				D9FE0C221D189F5C00DE6426 /* AppDelegate.swift in Sources */,
+				D9FE0C421D18A1CB00DE6426 /* CircleItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
