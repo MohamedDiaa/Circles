@@ -50,7 +50,7 @@ class CircleBoardView: UIView {
             
             print("point=  \(x) , \(y)")
 
-            subView.frame = CGRectMake(x, y, 30, 30)
+            subView.frame = CGRectMake(x, y, 10, 10)
             accumlatedAngle = accumlatedAngle + angleShift
             if accumlatedAngle >= CGFloat(2*M_PI)
             {
@@ -60,6 +60,80 @@ class CircleBoardView: UIView {
         }
     }
     
+    func animateWave()
+    {
+        var circlesItems = [NSRange]()
+        var lastRadius:CGFloat = 0
+        var startIndex:Int? = 0
+        
+        //Sort items into ranges for each circle
+        for (index,subView) in self.subviews.enumerate()
+        {
+            //let angle =  subView.frame.origin.x
+            let originalX =  subView.frame.origin.x - (self.bounds.width/2.0)
+            let originalY = subView.frame.origin.y  - (self.bounds.width/2.0)
+            let radius = sqrt( (originalX)*(originalX) + (originalY)*(originalY))
+            print("radius= \(radius)")
+            if lastRadius == 0
+            {
+                lastRadius = radius
+            }
+            if lastRadius != radius
+            {
+                if let start = startIndex
+                {
+                    circlesItems.append(NSMakeRange(start, index-start))
+                    startIndex = nil
+                }
+                else
+                {
+                    startIndex = index
+                }
+            }
+        }
+        
+        self.animateArray(circlesItems)
+    
+    }
+    
+    func animateArray(circles:[NSRange])
+    {
+        print(circles.count)
+        
+        var circles = circles
+        if circles.isEmpty
+        {
+            return
+        }
+
+        let range = circles.removeFirst()
+        UIView.animateWithDuration(0.5, delay: 0.1, options: UIViewAnimationOptions.AllowUserInteraction, animations: {
+            
+                for i in (range.location)..<(range.location+range.length)
+                {
+                    let subView = self.subviews[i]
+                    subView.frame = CGRectInset(subView.frame, subView.frame.width, subView.frame.height)
+                    subView.contentMode = UIViewContentMode.ScaleToFill
+                }
+            
+            }) { (success) in
+                
+                UIView.animateWithDuration(0.2, delay: 0, options: UIViewAnimationOptions.AllowUserInteraction, animations: { 
+                    
+                    for i in (range.location)..<(range.location+range.length)
+                    {
+                        let subView = self.subviews[i]
+                        subView.frame = CGRectInset(subView.frame, -subView.frame.width, -subView.frame.height)
+                        subView.contentMode = UIViewContentMode.ScaleAspectFit
+                    }
+
+                    }, completion: { (success) in
+                        
+                        self.animateArray(circles)
+                       // self.performSelector(#selector(CircleBoardView.animateArray), withObject: circles, afterDelay: 1)
+                })
+            }
+        }
     
     
 }

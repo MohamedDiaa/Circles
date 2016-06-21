@@ -24,6 +24,9 @@ class ViewController: UIViewController {
         circleView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(circleView)
         self.view.addConstraints([c1,c2,c3,c4])
+        
+        
+        circleView.performSelector(#selector(CircleBoardView.animateWave), withObject: nil, afterDelay: 2)
     }
 
     override func didReceiveMemoryWarning() {
