@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9E2DDE11D2D74A60034D027 /* circles-dribbble3.gif in Resources */ = {isa = PBXBuildFile; fileRef = D9E2DDE01D2D74A60034D027 /* circles-dribbble3.gif */; };
 		D9FE0C221D189F5C00DE6426 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE0C211D189F5C00DE6426 /* AppDelegate.swift */; };
 		D9FE0C241D189F5C00DE6426 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE0C231D189F5C00DE6426 /* ViewController.swift */; };
 		D9FE0C271D189F5C00DE6426 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9FE0C251D189F5C00DE6426 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D9E2DDE01D2D74A60034D027 /* circles-dribbble3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "circles-dribbble3.gif"; sourceTree = "<group>"; };
 		D9FE0C1E1D189F5C00DE6426 /* Circles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Circles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9FE0C211D189F5C00DE6426 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9FE0C231D189F5C00DE6426 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				D9FE0C231D189F5C00DE6426 /* ViewController.swift */,
 				D9FE0C251D189F5C00DE6426 /* Main.storyboard */,
 				D9FE0C281D189F5C00DE6426 /* Assets.xcassets */,
+				D9E2DDE01D2D74A60034D027 /* circles-dribbble3.gif */,
 				D9FE0C2A1D189F5C00DE6426 /* LaunchScreen.storyboard */,
 				D9FE0C2D1D189F5C00DE6426 /* Info.plist */,
 				D9FE0C411D18A1CB00DE6426 /* CircleItem.swift */,
@@ -186,6 +189,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9E2DDE11D2D74A60034D027 /* circles-dribbble3.gif in Resources */,
 				D9FE0C2C1D189F5C00DE6426 /* LaunchScreen.storyboard in Resources */,
 				D9FE0C291D189F5C00DE6426 /* Assets.xcassets in Resources */,
 				D9FE0C471D18A22100DE6426 /* Icons.xcassets in Resources */,
@@ -398,6 +402,7 @@
 				D9FE0C3D1D189F5C00DE6426 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9FE0C3E1D189F5C00DE6426 /* Build configuration list for PBXNativeTarget "CirclesUITests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +411,7 @@
 				D9FE0C401D189F5C00DE6426 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
