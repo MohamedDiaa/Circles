@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         self.view.addConstraints([c1,c2,c3,c4])
         
         
-        circleView.performSelector(#selector(CircleBoardView.animateWave), withObject: nil, afterDelay: 2)
+    //circleView.performSelector(#selector(CircleBoardView.animateWave), withObject: nil, afterDelay: 2)
     }
 
     override func didReceiveMemoryWarning() {

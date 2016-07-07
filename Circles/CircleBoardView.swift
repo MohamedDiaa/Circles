@@ -12,23 +12,31 @@ class CircleBoardView: UIView {
 
     //Concentric Circle
     //Radius - fixed difference between each circle radius 
-    
     // Number of items on circle circumfrance is proportional to its Radius
+    //Size and obacity can differ slightly between items
     
-    //Size and obacity can differ slightly between items 
-    
-    var radiusShift:CGFloat {get{ return 30 + CGFloat(arc4random_uniform(5)) }}/*between 10-15*/
+    var radiusShift:CGFloat {get{ return 30 //+ CGFloat(arc4random_uniform(5))
+                                    }}/*between 10-15*/
+
+    //var radiusShift:CGFloat {get{ return 30 + CGFloat(arc4random_uniform(5)) }}/*between 10-15*/
     
     //Angle Rotation between each item and next is not perfect equal,slight differnce - 20 degree
-    var angleShift :CGFloat{get{return CGFloat(M_PI/8) + CGFloat(arc4random_uniform(UInt32(M_PI/18)))}} /*between 20-25*/
+   // var angleShift :CGFloat{get{return CGFloat(M_PI/4) + CGFloat(arc4random_uniform(UInt32(M_PI/18)))}} /*between 20-25*/
+    
+    let itemRadius:CGFloat = 25
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        for _ in 0..<100
+        for _ in 0..<50
         {
-            let imView = UIImageView(image: UIImage(named:"avatar")!)
+            let imView = UIImageView(frame: CGRectMake(0, 0, 30, 30))
+            imView.image = UIImage(named:"avatar")
             imView.contentMode = UIViewContentMode.ScaleAspectFit
+            imView.layer.borderColor =  UIColor.lightGrayColor().CGColor
+            imView.layer.borderWidth = 1.0
+            imView.layer.cornerRadius = imView.bounds.width/2.0
+            imView.layer.masksToBounds = true
             self.addSubview(imView)
         }
     }
@@ -42,19 +50,24 @@ class CircleBoardView: UIView {
         
         //Starting with inner radius , fill it then increment it
         var accumlatedRadius = radiusShift
-        var accumlatedAngle = angleShift
+        var accumlatedAngle:CGFloat = 0
         for subView in self.subviews
         {
+            //let circlesPerRadius = CGFloat(2*M_PI*Double(accumlatedRadius)) / (itemRadius + 5)
+            let angle = (12*itemRadius + 5)/CGFloat(2*M_PI*Double(accumlatedRadius))
+            
             let x = accumlatedRadius * cos(accumlatedAngle) + (self.bounds.width/2.0)
             let y = accumlatedRadius * sin(accumlatedAngle) + (self.bounds.height/2.0)
             
             print("point=  \(x) , \(y)")
 
-            subView.frame = CGRectMake(x, y, 10, 10)
-            accumlatedAngle = accumlatedAngle + angleShift
-            if accumlatedAngle >= CGFloat(2*M_PI)
+            subView.frame = CGRectMake(x, y, itemRadius, itemRadius)
+            //accumlatedAngle = accumlatedAngle + angleShift
+            accumlatedAngle = accumlatedAngle + angle
+
+            if CGFloat(accumlatedAngle) >= CGFloat(2*M_PI)
             {
-                accumlatedAngle = angleShift
+                accumlatedAngle = 0
                 accumlatedRadius += radiusShift
             }
         }
