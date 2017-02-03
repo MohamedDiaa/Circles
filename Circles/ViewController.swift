@@ -14,12 +14,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let circleView = CircleBoardView(frame: CGRectZero)
+        let circleView = CircleBoardView(frame: CGRect.zero)
         
-        let c1 = NSLayoutConstraint(item: self.view, attribute: .Leading, relatedBy: .Equal, toItem: circleView, attribute: .Leading, multiplier: 1.0, constant: 0.0)
-        let c2 = NSLayoutConstraint(item: self.view, attribute: .Trailing, relatedBy: .Equal, toItem: circleView, attribute: .Trailing, multiplier: 1.0, constant: 0.0)
-        let c3 = NSLayoutConstraint(item: self.view, attribute: .Top, relatedBy: .Equal, toItem: circleView, attribute: .Top, multiplier: 1.0, constant: 0.0)
-        let c4 = NSLayoutConstraint(item: self.view, attribute: .Bottom, relatedBy: .Equal, toItem: circleView, attribute: .Bottom, multiplier: 1.0, constant: 0.0)
+        let c1 = NSLayoutConstraint(item: self.view, attribute: .leading, relatedBy: .equal, toItem: circleView, attribute: .leading, multiplier: 1.0, constant: 0.0)
+        let c2 = NSLayoutConstraint(item: self.view, attribute: .trailing, relatedBy: .equal, toItem: circleView, attribute: .trailing, multiplier: 1.0, constant: 0.0)
+        let c3 = NSLayoutConstraint(item: self.view, attribute: .top, relatedBy: .equal, toItem: circleView, attribute: .top, multiplier: 1.0, constant: 0.0)
+        let c4 = NSLayoutConstraint(item: self.view, attribute: .bottom, relatedBy: .equal, toItem: circleView, attribute: .bottom, multiplier: 1.0, constant: 0.0)
     
         circleView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(circleView)
